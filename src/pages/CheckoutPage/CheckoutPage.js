@@ -27,7 +27,7 @@ export default function Checkout({ item }) {
 
   const doCheckout = () => {
     const newPuchese = {     
-      dates: new Date(),
+      date: new Date(),
       items: cartItems,
     };
     purchaseHistory.push(newPuchese);

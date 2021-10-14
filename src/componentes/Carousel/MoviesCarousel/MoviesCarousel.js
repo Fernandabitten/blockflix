@@ -5,12 +5,11 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import CardMovie from "../../Cards/CardMovie/CardMovie";
 
 export default function MoviesCarousel({ title, items }) {
-  console.log("ENTREI NA CLASSE")
   const [scroll, setScroll] = useState(0);
   const history = useHistory();
 
   useEffect(() => {
-    console.log("use efect")
+  
   })
 
   const irParaDetalharFilme = (idItem) => {

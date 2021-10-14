@@ -37,7 +37,8 @@ function Accordion({ purchase, key }) {
   const getMonth = purchaseDate.getMonth() + 1;
   const date = purchaseDate.getDate() + "/" + getMonth + "/" + purchaseDate.getFullYear();
   const itemOrItens = purchase.items.length <= 1 ? "item" : "itens";
-
+  console.log(date)
+  console.log(purchase.date)
   return (
     <AccordionStyled>
       <Button onClick={AccordionOnCLick}>

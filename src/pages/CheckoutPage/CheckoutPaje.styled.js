@@ -9,7 +9,7 @@ export const ContainerCheckout = styled.div`
 export const CheckoutStyled = styled(ContainerCheckout)`
   width: 50%;
   margin: 0 auto;
-  overflow: auto;
+  overflow: hidden;
   width: 75%;
   max-width: 960px;
   display: inline-block;
@@ -18,7 +18,7 @@ export const CheckoutStyled = styled(ContainerCheckout)`
 export const CardStyled = styled(ContainerCheckout)`
   width: 50%;
   margin: 0 auto;
-  overflow: auto;
+  overflow: hidden;
   width: 75%;
   max-width: 960px;
   margin-top: 6%;

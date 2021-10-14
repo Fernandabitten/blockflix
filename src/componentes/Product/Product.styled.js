@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductBox = styled.div`
-width: 500px;  
+width: 100%;  
 height: 100%;  
 border: 1px solid #3498db;
 background-color: rgb(234, 236, 238);  

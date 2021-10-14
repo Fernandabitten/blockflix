@@ -6,7 +6,8 @@
   }
 
   .products {
-    border-top: 1px solid #494848;    
+   border-top: 1px solid #494848; 
+ 
   }
   
   .products > li {
@@ -34,10 +35,7 @@
   }
   
   .col.right {
-    width: 20%;
-    position: absolute;
-    right: 0;
-    top: calc(50% - 30px);
+    margin-left: -10%;
   }
   
  .detail {  

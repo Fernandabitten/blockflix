@@ -68,7 +68,7 @@ export default function Checkout({ item }) {
 
         <CardStyled>
           <div>
-            <h1>TOTAL DO CARRINHO</h1>
+            <h3>TOTAL DO CARRINHO</h3>
             <ul className="product">
               {cartItems.map((item, index) => (
                 <li key={index} className="row">

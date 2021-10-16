@@ -32,7 +32,7 @@ export default function MoviesCarousel({ title, items }) {
 
   return (
     <div className="movieRow--listarea">
-      <h2>{title}</h2>
+      <h2 style={{marginTop:"20vh"}}>{title}</h2>
       <div className="movieRow--left" onClick={handleLeftArrow}>
         <NavigateBeforeIcon style={{ fontSize: 50 }} />
       </div>

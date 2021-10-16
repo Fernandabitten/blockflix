@@ -7,22 +7,17 @@ export const ContainerCheckout = styled.div`
 `;
 
 export const CheckoutStyled = styled(ContainerCheckout)`
-  width: 50%;
+  width: 55%;
   margin: 0 auto;
-  overflow: hidden;
-  width: 75%;
-  max-width: 960px;
+  overflow: hidden;    
   display: inline-block;
 `;
 
-export const CardStyled = styled(ContainerCheckout)`
-  width: 50%;
+export const CardStyled = styled(ContainerCheckout)` 
   margin: 0 auto;
   overflow: hidden;
-  width: 75%;
-  max-width: 960px;
+  width: 45%; 
   margin-top: 6%;
-
 `;
 
 export const Count = styled(ContainerCheckout)`

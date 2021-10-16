@@ -10,7 +10,7 @@ export const Nav = styled.div`
   font-family: Helvetica;
   font-weight: 300;
   color: white;
-  height: 80px;
+  height: 15vh;
   position: fixed;
   top: 0;
   left: 0;  

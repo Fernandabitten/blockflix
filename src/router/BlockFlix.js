@@ -8,8 +8,9 @@ import {
 import { publicRoutes, privateRoutes } from "./router";
 import { MyContext } from "../context/context";
 
-function BlockFlix() {
+function BlockFlix({ boxData }) {
   return (
+
     <Router>
       <Switch>
         {publicRoutes.map((route) => {
@@ -54,6 +55,7 @@ function PrivateRoute({ children, ...rest }) {
         )
       }
     />
+
   );
 }
 export default BlockFlix;

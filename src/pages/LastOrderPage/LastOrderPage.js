@@ -8,7 +8,7 @@ import { ContainerCheckout } from "./LastOrderPage.styled";
  */
 
 export default function UltimosPedidos() {
-  const purchaseHistory = JSON.parse(      
+  const purchaseHistory = JSON.parse(
     localStorage.getItem("purchaseHistory") || "[]"
   );
 
@@ -19,9 +19,7 @@ export default function UltimosPedidos() {
           <h1>Últimos Compras</h1>
           <br />
           {purchaseHistory.map((purchase, key) => (
-            <>
-              <Accordion purchase={purchase} key={key} />{" "}
-            </>
+            <Accordion purchase={purchase} key={key} />
           ))}
         </div>
       </ContainerCheckout>

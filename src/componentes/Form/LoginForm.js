@@ -40,6 +40,8 @@ const Login = () => {
     },
   });
 
+  const year = (new Date()).getFullYear();
+
   return (
     <Grid style={{ marginTop: "-5%" }}>
       <form action="" onSubmit={form.handleSubmit}>
@@ -103,10 +105,10 @@ const Login = () => {
           </Button>
         </Paper>
         <center>
-          <spam style={{ color: "#494848", marginTop: "100%" }}>
-            @2021 Fernanda Bittencourt <br />
-            Dados e imagens pegos do site themoviedb.org
-          </spam>
+          <div style={{ color: "#494848" }}>
+            {year} Fernanda Bittencourt <br />
+            Dados e imagens consumidos do site themoviedb.org
+          </div>
         </center>
       </form>
     </Grid>

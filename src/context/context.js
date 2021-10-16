@@ -12,24 +12,18 @@ export function MyProvider({ children }) {
     JSON.parse(localStorage.getItem("cartList") || "[]")
   );
 
-  const [totalPurchase, setTotalPurchase] = useState(
-    JSON.parse(localStorage.getItem("purchasesCart") || 1)
-  );
-
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("cartList", JSON.stringify(cartItems));
-    localStorage.setItem("purchasesCart", JSON.stringify(totalPurchase));
-
-  }, [cartItems, totalPurchase]);
+  }, [cartItems]);
 
   const loginUser = (loginValues) => {
     localStorage.setItem("login", JSON.stringify(loginValues));
     setIsLogged(true);
   };
 
-   const addItemToCart = (item) => {
+  const addItemToCart = (item) => {
     setCartItems((prevState) => {
       //se um produto(item) com mesmo Id for encontrado, ele não é adicionado a lista
       if (prevState.find((product) => product.id === item.id)) {
@@ -47,21 +41,6 @@ export function MyProvider({ children }) {
     });
   };
 
-  useEffect(() => {
-    purchase();
-  });
-
-  const purchase = () => {  
-    setTotalPurchase((prevState) => {
-      return cartItems.reduce((currentValue, nextItem) => {
-        return currentValue + nextItem.vote_average * 10;
-      }, 0);
-    });
-  };
-
-  const jsonLog = localStorage.getItem("login");
-  const log = JSON.parse(jsonLog);
-
   return (
     <MyContext.Provider
       value={{
@@ -70,11 +49,9 @@ export function MyProvider({ children }) {
         usuario: null,
         addItemToCart,
         deleteItemFromCart,
-        purchase,
         loginUser,
         isLogged,
         setIsLogged,
-        totalPurchase,    
       }}
     >
       {children}

@@ -66,9 +66,12 @@ export default function CardMovieDetails({ item, itemDetails }) {
               padding: "15p 25px",
             }}
           >
-            <spam>R$ {(item.vote_average * 10).toFixed(2)}</spam>
+            <div>R$ {(item.vote_average * 10).toFixed(2)}</div>
           </Button>
           <div className="description">{item.overview}</div>
+          <div
+            style={{ width: "100%", height: "100%", marginTop: "-25%" }}
+          ></div>
         </div>
       </div>
     </div>

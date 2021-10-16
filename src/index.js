@@ -5,14 +5,6 @@ import BlockFlix from '../src/router/BlockFlix';
 import {MyProvider} from './context/context'
 import "./index.css";
 
-const temaDaAmericanas = {
-  color: "tomato",
-};
-
-const temaSubmarino = {
-  color: "blue",
-};
-
 ReactDOM.render(
   <React.StrictMode>    
       <MyProvider>

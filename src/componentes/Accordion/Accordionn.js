@@ -10,7 +10,7 @@ import {
   InfoItemStyled,
 } from "./Accordion.styled";
 
-function Accordion({ purchase, key }) {
+function Accordion({ purchase }) {
   const { addItemToCart } = useContext(MyContext);
 
   const totalPrice = purchase.items.reduce((currentValue, nextItem) => {
@@ -18,7 +18,7 @@ function Accordion({ purchase, key }) {
   }, 0);
   const total = totalPrice.toFixed(2);
 
-  function AccordionOnCLick(purchase) {
+  const accordionOnCLick = (purchase) => {
     purchase.target.classList.toggle("active");
     const accordionPanel = purchase.target.nextSibling;
     if (accordionPanel.style.maxHeight) {
@@ -26,42 +26,45 @@ function Accordion({ purchase, key }) {
     } else {
       accordionPanel.style.maxHeight = accordionPanel.scrollHeight + "px";
     }
-  }
+  };
 
   const onClickAdicionarAoCarrinho = () => {
     addItemToCart(purchase.items);
   };
-  console.log(purchase.items);
 
-  const purchaseDate = new Date(purchase.date);
-  const getMonth = purchaseDate.getMonth() + 1;
-  const date = purchaseDate.getDate() + "/" + getMonth + "/" + purchaseDate.getFullYear();
-  const itemOrItens = purchase.items.length <= 1 ? "item" : "itens";
-  console.log(date)
-  console.log(purchase.date)
+  const getDate = (purchaseDate) => {
+    const date = new Date(purchaseDate);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  };
+
+  const dateFormatted = getDate(purchase.date);
+  const itemOrItens = purchase.items.length > 1 ? "itens" : "item";
+
   return (
     <AccordionStyled>
-      <Button onClick={AccordionOnCLick}>
-        {date} - {purchase.items.length} {itemOrItens} - Total R$ {total} &emsp;
-        &emsp; &darr;
+      <Button onClick={accordionOnCLick}>
+        {dateFormatted} - {purchase.items.length} {itemOrItens} - Total R${" "}
+        {total} &emsp; &emsp; &darr;
       </Button>
       <AccordionPainel>
         {purchase.items.map((item, key) => {
           return (
-            <AccordionBoxItems>
+            <AccordionBoxItems key={key}>
               <AcordionItem>
                 <ImgStyled>
                   <>
                     <img
-                      onClick={"irParaDetalharFilme"}
                       src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                      alt={""}
-                      key={key}
+                      alt={""}                  
                     />
                   </>
                 </ImgStyled>
                 <InfoItemStyled>
-                  <div >
+                  <div>
                     <h4>{item.title}</h4>
                   </div>
                   <div>R$ {(item.vote_average * 10).toFixed(2)}</div>
@@ -81,7 +84,6 @@ function Accordion({ purchase, key }) {
             backgroundColor: "#D3840B",
             fontWeight: "bold",
             fontSize: "100%",
-           
           }}
         >
           Comprar de novo

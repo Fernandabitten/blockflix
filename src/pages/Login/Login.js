@@ -10,9 +10,9 @@ function Login() {
       <VerticalColumn>
         <HorizontalColumn>
           <div style={{ marginTop: "4%", marginLeft: "3%" }}>
-            <spam style={{ fontSize: "35px" }}>
+            <div style={{ fontSize: "35px" }}>
               Assista a filmes em qualquer Lugar
-            </spam>
+            </div>
             <LoginForm />
           </div>
         </HorizontalColumn>

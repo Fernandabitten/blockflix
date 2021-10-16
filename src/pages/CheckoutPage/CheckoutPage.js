@@ -19,14 +19,19 @@ import "./checkout.css";
  */
 
 export default function Checkout({ item }) {
-  const { cartItems, totalPurchase, setCartItems } = useContext(MyContext);
-  const sun = totalPurchase.toFixed(2);
+  const { cartItems, setCartItems } = useContext(MyContext);
+  const sum = cartItems
+    .reduce((currentValue, nextItem) => {
+      return currentValue + nextItem.vote_average * 10;
+    }, 0)
+    .toFixed(2);
+
   const purchaseHistory = JSON.parse(
     localStorage.getItem("purchaseHistory") || "[]"
   );
 
   const doCheckout = () => {
-    const newPuchese = {     
+    const newPuchese = {
       date: new Date(),
       items: cartItems,
     };
@@ -37,7 +42,7 @@ export default function Checkout({ item }) {
     localStorage.setItem("cartList", []);
   };
 
-  const itemOrItens = cartItems.length <= 1 ? "item" : "itens";
+  const itemOrItens = cartItems.length > 1 ? "itens" : "item";
 
   return (
     <Layout>
@@ -49,12 +54,12 @@ export default function Checkout({ item }) {
           </Count>
           <ul className="products">
             {cartItems.map((item, key) => (
-              <li  key={key} className="row">
+              <li key={key} className="row">
                 <Product
                   key={item}
                   item={item}
                   itemName={item.title}
-                  idItem={item.id}                 
+                  idItem={item.id}
                 />
               </li>
             ))}
@@ -65,17 +70,17 @@ export default function Checkout({ item }) {
           <div>
             <h1>TOTAL DO CARRINHO</h1>
             <ul className="product">
-              {cartItems.map((item) => (
-                <li className="row">
+              {cartItems.map((item, index) => (
+                <li key={index} className="row">
                   <CartItems>
-                    <spam>{item.title}</spam>{" "}
-                    <spam>R$ {(item.vote_average * 10).toFixed(2)}</spam>
+                    <div>{item.title}</div>{" "}
+                    <div>R$ {(item.vote_average * 10).toFixed(2)}</div>
                   </CartItems>
                 </li>
               ))}
             </ul>
             <br />
-            <h2> R$ {sun} </h2>
+            <h2> R$ {sum} </h2>
 
             <Button
               component="button"

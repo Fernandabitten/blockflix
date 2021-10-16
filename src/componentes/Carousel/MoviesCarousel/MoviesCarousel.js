@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
@@ -8,12 +8,8 @@ export default function MoviesCarousel({ title, items }) {
   const [scroll, setScroll] = useState(0);
   const history = useHistory();
 
-  useEffect(() => {
-  
-  })
-
   const irParaDetalharFilme = (idItem) => {
-    history.push(`/movies/${idItem}`);        
+    history.push(`/movies/${idItem}`);
   };
 
   const handleRightArrow = () => {
@@ -47,7 +43,7 @@ export default function MoviesCarousel({ title, items }) {
       <div
         className="movieRow--list"
         style={{ marginLeft: scroll, width: items.results.length * 300 }}
-        >         
+      >
         {items.results.length > 0 &&
           items.results.map((movie, key) => (
             <div key={key} className="movieRow--item">

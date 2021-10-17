@@ -16,7 +16,7 @@ export default function UltimosPedidos() {
     <Layout>
       <ContainerCheckout>
         <div>
-          <h1>Últimos Compras</h1>
+          <h1>Últimas Compras</h1>
           <br />
           {purchaseHistory.map((purchase, key) => (
             <Accordion purchase={purchase} key={key} />

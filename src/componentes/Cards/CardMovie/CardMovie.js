@@ -36,7 +36,7 @@ export default function CardMovie({ item, navigate }) {
         </div>
 
         <div className="card-body">
-          <div className="card-title" onClick={irParaDetalharFilme}>
+          <div className="card-title name" onClick={irParaDetalharFilme}>
             <h6>{item.original_name}</h6>
             <h4>{item.title}</h4>
           </div>

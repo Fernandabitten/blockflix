@@ -28,8 +28,8 @@ export default function CardMovieDetails({ item, itemDetails }) {
   }
 
   let description = item.overview;
-  if (description.length > 400) {
-    description = description.substring(0, 400)+"...";
+  if (description.length > 200) {
+    description = description.substring(0, 200)+"...";
   }
 
   return (

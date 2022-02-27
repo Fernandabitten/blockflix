@@ -84,9 +84,9 @@ button:hover{
     .container {
         height: 90vh;
     }
-    .name {
+    .title {
         font-size: 40px;
-    }
+      }
     .info{
         font-size: 16px;
     }

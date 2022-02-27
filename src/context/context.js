@@ -18,8 +18,7 @@ export function MyProvider({ children }) {
     localStorage.setItem("cartList", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const loginUser = (loginValues) => {
-    localStorage.setItem("login", JSON.stringify(loginValues));
+  const loginUser = (loginValues) => {   
     setIsLogged(true);
   };
 

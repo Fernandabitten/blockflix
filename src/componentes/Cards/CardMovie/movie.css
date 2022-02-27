@@ -50,7 +50,8 @@
 .movieRow--left,
 .movieRow--right{
     position: absolute;
-    height: 50%;
+    margin-top: 3%;
+    height: 40%;
     background-color: rgba(17, 17, 16, 0.6); 
     z-index: 99;
     display: flex;
@@ -93,5 +94,11 @@ button:hover{
         font-size: 14px;
         max-width: 100%;
         margin-right: 30px;
+    }
+}
+@media (max-width:760px) {
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
     }
 }

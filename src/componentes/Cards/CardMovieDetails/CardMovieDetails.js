@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { MyContext } from "../../../context/context";
-import loading from "../../../img/loading.gif";
 import "./cardMovieDetails.css";
 import Button from "@material-ui/core/Button";
 
@@ -8,16 +7,8 @@ export default function CardMovieDetails({ item, itemDetails }) {
   const { addItemToCart } = useContext(MyContext);
 
   const onClickAdicionarAoCarrinho = () => {
-    addItemToCart(item);
+     addItemToCart(item); 
   };
-
-  if (item === null || itemDetails === null) {
-    return (
-      <div style={{ backgroundColor: "black", width: "100%", height: "600px" }}>
-        <img src={loading} alt="" style={{ width: "25%", marginLeft: "40%" }} />
-      </div>
-    );
-  }
 
   const convertMovieRuntime = (minutos) => {
     const horas = Math.floor(minutos / 60);
@@ -34,6 +25,11 @@ export default function CardMovieDetails({ item, itemDetails }) {
   let genres = [];
   for (let i in item.genres) {
     genres.push(item.genres[i].name);
+  }
+
+  let description = item.overview;
+  if (description.length > 400) {
+    description = description.substring(0, 400)+"...";
   }
 
   return (
@@ -68,7 +64,7 @@ export default function CardMovieDetails({ item, itemDetails }) {
           >
             <div>R$ {(item.vote_average * 10).toFixed(2)}</div>
           </Button>
-          <div className="description">{item.overview}</div>
+          <div className="description"><p>{description}</p></div>
           <div
             style={{ width: "100%", height: "100%", marginTop: "-25%" }}
           ></div>

@@ -16,19 +16,19 @@
 .actorRow--item {
     display: inline-block;
     width: 150px;
-    /*cursor: pointer;*/
+    cursor: pointer;
     
 }
 
 .actorRow--item img {
     width: 100%;
     transform: scale(0.9); 
-   /* transition: all ease 0.2s;  */
+    transition: all ease 0.2s;  
 }
 
-/*.actorRow--item img:hover {
+.actorRow--item img:hover {
     transform: scale(1);
-}*/
+}
 
 .card-body{
     height: 150px;

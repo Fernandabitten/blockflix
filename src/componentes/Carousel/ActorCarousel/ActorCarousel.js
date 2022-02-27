@@ -4,8 +4,22 @@ import CardActor from "../../Cards/CardActor/CardActor";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
+/******************* */
+import { useHistory } from "react-router-dom";
+/************* */
+
 function ActorCarousel({ actor, item, itemDetails }) {
   const [scroll, setScroll] = useState(0);
+
+  
+  /************** */
+  const history = useHistory();
+  const irParaDetalharActor = (idItem) => {
+    console.log("detalhar ator")
+    history.push(`/movies/${idItem}`);    
+  };
+ /******************* */
+
 
   const handleRightArrow = () => {
     let x = scroll - Math.round(window.innerWidth / 2);
@@ -43,7 +57,13 @@ function ActorCarousel({ actor, item, itemDetails }) {
               return (
                 <div key={key} className="actorRow--item">
                   <div>
-                    <CardActor actor={actor} />
+                    <CardActor 
+                    actor={actor}
+
+                    key={actor.id}
+                    navigate={irParaDetalharActor}
+
+                    />
                   </div>
                 </div>
               );

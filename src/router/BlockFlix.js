@@ -10,7 +10,6 @@ import { MyContext } from "../context/context";
 
 function BlockFlix({ boxData }) {
   return (
-
     <Router>
       <Switch>
         {publicRoutes.map((route) => {

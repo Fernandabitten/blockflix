@@ -3,7 +3,6 @@ import { MyContext } from "../../context/context";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
 import Logo from "../../img/logo.png";
 import { Grid, Paper, Button } from "@material-ui/core";
 import Input from "@material-ui/core/Input";
@@ -18,13 +17,11 @@ const Schema = Yup.object().shape({
 
 const Login = () => {
   const paperStyle = {
-    padding: 50,
-    height: "68vh",
-    width: 320,
-    margin: "20px auto",
+    height: "68vh", 
+    width: 300,
+    margin: "auto",
     backgroundColor: " transparent",
   };
-
   const { loginUser } = useContext(MyContext);
 
   const history = useHistory();
@@ -40,14 +37,12 @@ const Login = () => {
     },
   });
 
-  const year = (new Date()).getFullYear();
-
   return (
-    <Grid style={{ marginTop: "-5%" }}>
+    <Grid >
       <form action="" onSubmit={form.handleSubmit}>
-        <Paper elevation={10} style={paperStyle}>
-          <Grid align="center">
-            <img src={Logo} alt={""} />
+        <Paper style={paperStyle}>
+          <Grid >
+            <img src={Logo} alt={"blockflix"}/>
           </Grid>
           <Input
             id="email"
@@ -59,8 +54,7 @@ const Login = () => {
             fullWidth
             required
             style={{
-              width: "300px",
-              marginLeft: "-10%",
+              width: "300px", 
               marginTop: "10%",
               borderBottom: " 1px solid white",
               color: "white",
@@ -79,7 +73,6 @@ const Login = () => {
             required
             style={{
               width: "300px",
-              marginLeft: "-10%",
               marginTop: "10%",
               borderBottom: " 1px solid white",
               color: "white",
@@ -96,7 +89,6 @@ const Login = () => {
               fontSize: "15px",
               marginTop: "35px",
               width: "300px",
-              marginLeft: "-10%",
               height: "50px",
             }}
             fullWidth
@@ -104,14 +96,8 @@ const Login = () => {
             Entrar
           </Button>
         </Paper>
-        <center>
-          <div style={{ color: "#494848" }}>
-            {year} Fernanda Bittencourt <br />
-            Dados e imagens consumidos do site themoviedb.org
-          </div>
-        </center>
-      </form>
-    </Grid>
+      </form>      
+    </Grid>    
   );
 };
 

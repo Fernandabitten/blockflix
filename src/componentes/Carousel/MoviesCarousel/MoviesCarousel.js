@@ -8,7 +8,8 @@ export default function MoviesCarousel({ title, items }) {
   const [scroll, setScroll] = useState(0);
   const history = useHistory();
 
-  const irParaDetalharFilme = (idItem) => {
+  const irParaDetalharFilme = (idItem) => { 
+    console.log(idItem)   
     history.push(`/movies/${idItem}`);
   };
 

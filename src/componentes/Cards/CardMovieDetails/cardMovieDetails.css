@@ -40,5 +40,11 @@
     font-size: 17px;
     margin-right: 15px;
     max-width: 60%;
-    line-height: 24px;
+    line-height: 24px;    
 }
+/*p {
+    max-width: 200000 ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }*/

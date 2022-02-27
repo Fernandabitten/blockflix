@@ -6,8 +6,15 @@ export const LoginStayled = styled.div`
     height: 100vh;
     width: 100%;
     background-color: white;
-    display: flex;
     background-size: cover;
+    text-alin: center;
+`;
+
+export const Body = styled(LoginStayled)`
+    marginTop: "4%", 
+    margin-left: "10%"; 
+    align-items: "center"; 
+    text-align: "center";
 `;
 
 export const VerticalColumn = styled(LoginStayled)`

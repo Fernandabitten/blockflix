@@ -147,12 +147,6 @@ const Tmdb = {
     );
     return result.data;
   },
-  getMovieTrailer: async (id) => {
-    const result = await axios.get(
-      `${API_BASE}/movie/${id}?api_key=${API_Key}&language=pt-BR&append_to_response=videos`
-    );
-    return result.data;
-  },
 };
 
 export default Tmdb;

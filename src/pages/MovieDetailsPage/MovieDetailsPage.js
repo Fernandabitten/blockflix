@@ -10,17 +10,7 @@ import {
 import CardMovieDetails from "../../componentes/Cards/CardMovieDetails/CardMovieDetails";
 import ActorCarousel from "../../componentes/Carousel/ActorCarousel/ActorCarousel";
 import MoviesCarousel from "../../componentes/Carousel/MoviesCarousel/MoviesCarousel";
-import loading from "../../img/loading.gif";
-
-/*
-[Ok] nome do filme;
-[ok] recomendações para aquele filme;
-[ok] elenco; 
-[ok] gêneros;
-[ok] ano de lançamento; 
-[ok] tempo do filme;
-[ok] botão para adicionar ao carrinho. 
-*/
+import loading from "../../img/loading2.gif";
 
 export default function DetalharFilme() {
   const [item, setItem] = useState(null);
@@ -35,7 +25,7 @@ export default function DetalharFilme() {
 
   useEffect(() => {
     const details = async () => {
-      setItem(await Tmdb.getMovie(params.id));
+      setItem(await Tmdb.getMovie(params.id)); 
     };
 
     const detailsElenc = async () => {
@@ -53,7 +43,7 @@ export default function DetalharFilme() {
 
   if (item === null || itemDetails === null) {
     return (
-      <div style={{ backgroundColor: "black", width: "100%", height: "600px" }}>
+      <div style={{ backgroundColor: "#151f28", width: "100%", height: "600px" }}>
         <img src={loading} alt="" style={{ width: "25%", marginLeft: "40%" }} />
       </div>
     );

@@ -55,7 +55,7 @@ export const AcordionItem = styled(AccordionStyled)`
 
 export const ImgStyled = styled(AccordionStyled)`
   display: inline-block;
-  width: 6%;
+  max-width: 6%;
   float: left;
 `;
 

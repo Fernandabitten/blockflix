@@ -59,7 +59,8 @@ function Accordion({ purchase }) {
                   <>
                     <img
                       src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                      alt={""}
+                      alt={""} 
+                      style={{maxWidth:"100%"}}                 
                     />
                   </>
                 </ImgStyled>

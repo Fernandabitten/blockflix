@@ -16,4 +16,11 @@ export const InfoActorStyled = styled(CardActorStyled)`
   margin: center;
   padding: -10px;
   display: flex;
+  @media (max-width: 760px) {
+    span {
+      font-size: 14px;
+      max-width: 100%;
+      margin-right: 30px;
+    }
+  }
 `;

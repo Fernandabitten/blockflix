@@ -16,11 +16,11 @@ import Button from "@material-ui/core/Button";
 export default function CardMovie({ item, navigate }) {
   const { addItemToCart } = useContext(MyContext);
 
-  const irParaDetalharFilme = () => {
+  const goToDetailMovie = () => {
     navigate(item.id);
   };
 
-  const onClickAdicionarAoCarrinho = () => {
+  const onClickAddToCart = () => {
     addItemToCart(item);
   };
 
@@ -29,14 +29,14 @@ export default function CardMovie({ item, navigate }) {
       <div className="cardBox">
         <div>
           <img
-            onClick={irParaDetalharFilme}
+            onClick={goToDetailMovie}
             src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
             alt={""}
           />
         </div>
 
         <div className="card-body">
-          <div className="card-title name" onClick={irParaDetalharFilme}>
+          <div className="card-title" onClick={goToDetailMovie}>
             <h6>{item.original_name}</h6>
             <h4>{item.title}</h4>
           </div>
@@ -48,7 +48,7 @@ export default function CardMovie({ item, navigate }) {
           >
             <IconButton
               aria-label="detalhar filme"
-              onClick={irParaDetalharFilme}
+              onClick={goToDetailMovie}
             >
               <OpenInNewIcon
                 style={{
@@ -62,7 +62,7 @@ export default function CardMovie({ item, navigate }) {
             <Button
               size="small"
               color="secondary"
-              onClick={onClickAdicionarAoCarrinho}
+              onClick={onClickAddToCart}
               style={{
                 color: "#fff",
                 backgroundColor: "#D3840B",

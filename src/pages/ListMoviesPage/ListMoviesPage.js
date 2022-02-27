@@ -3,6 +3,7 @@ import Tmdb from "../../Tmdb";
 import Layout from "../../componentes/Layoute/Layout";
 import MoviesCarousel from "../../componentes/Carousel/MoviesCarousel/MoviesCarousel";
 import "./listMoviesPage.css";
+import SelectCategory from "../../componentes/Select/SelectCategory";
 
 /*
 [ok]  Header
@@ -63,32 +64,10 @@ export default function ListarFilmes() {
         </div>
         <div>
           <div>
-            <div>
-              <select
-                className="list--category"
-                value={category}
-                onChange={changeCategory}
-              >
-                <option value="action">Ação</option>
-                <option value="adventure">Aventura</option>
-                <option value="animation">Anime</option>
-                <option value="comedy">Comédia</option>
-                <option value="crime">Crime</option>
-                <option value="drama">Drama</option>
-                <option value="documentary">Documentário</option>
-                <option value="family">Para toda família</option>
-                <option value="fantasy">Fantasia</option>
-                <option value="western">Faroeste</option>
-                <option value="science fiction">Ficção Científica</option>
-                <option value="war">Guerra</option>
-                <option value="history">História</option>
-                <option value="horror">Terror</option>
-                <option value="music">Musicais</option>
-                <option value="mystery">Mistério</option>
-                <option value="romance">Romance</option>
-              </select>
-            </div>
-
+            <SelectCategory
+              category={category}
+              changeCategory={changeCategory}
+            />
             <div className="movieCategory">
               <MoviesCarousel title={movies.title} items={movies.items} />
             </div>

@@ -18,10 +18,10 @@ export const Button = styled(AccordionStyled)`
   outline: none;
   font-size: 20px;
   transition: 0.4s;
-  width: 80%; 
-  b{
+  width: 80%;
+  b {
     color: red;
-  } 
+  }
 `;
 
 export const AccordionBoxItems = styled(AccordionStyled)`
@@ -47,20 +47,20 @@ export const AccordionPainel = styled(AccordionStyled)`
 `;
 
 export const AcordionItem = styled(AccordionStyled)`
-display:flex;
+  display: flex;
 
   color: black;
   margin-left: 5%;
 `;
 
 export const ImgStyled = styled(AccordionStyled)`
-display: inline-block;
+  display: inline-block;
   width: 6%;
   float: left;
 `;
 
 export const InfoItemStyled = styled(AccordionStyled)`
-display: inline-block;
+  display: inline-block;
   float: left;
   padding: 0 0.8rem;
   lineheight: 2rem;

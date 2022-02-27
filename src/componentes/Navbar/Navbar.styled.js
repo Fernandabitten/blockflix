@@ -13,23 +13,19 @@ export const Nav = styled.div`
   height: 15vh;
   position: fixed;
   top: 0;
-  left: 0;  
-  z-index: 1;  
+  left: 0;
+  z-index: 1;
 `;
 
 export const NavItemLeft = styled(Nav)`
   display: flex;
   position: relative;
-    img {
-      margin-left: 2%;      
-    }
 `;
 
 export const NavItemRight = styled(Nav)`
   display: flex;
   margin-left: 50%;
   position: relative;
-
 `;
 
 export const NavItem = styled(Nav)`
@@ -46,9 +42,7 @@ export const NavItem = styled(Nav)`
     color: orange;
   }
   :hover {
-    //border-top: 1px solid white;
-   border-bottom: 1px solid white; 
-
+    border-bottom: 1px solid white;
   }
 `;
 
@@ -68,19 +62,19 @@ export const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? 'White' : 'White'};
+    background-color: ${({ open }) => (open ? "White" : "White")};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
     &:nth-child(1) {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
     &:nth-child(2) {
-      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-      opacity: ${({ open }) => open ? 0 : 1};
+      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
+      opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 `;
@@ -93,7 +87,7 @@ export const Ul = styled.ul`
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #1B252F;
+    background-color: #1b252f;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -108,5 +102,13 @@ export const Ul = styled.ul`
   }
 `;
 
-
-
+export const ImgStyled = styled(Nav)`
+  img {
+    padding: 16px 16px;
+  }
+  @media (max-width: 700px) {
+    img {
+      max-width: 150px;
+    }
+  }
+`;

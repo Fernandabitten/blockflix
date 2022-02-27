@@ -8,15 +8,15 @@ export default function MoviesCarousel({ title, items }) {
   const [scroll, setScroll] = useState(0);
   const history = useHistory();
 
-  const irParaDetalharFilme = (idItem) => { 
-    console.log(idItem)   
+  const goToDetailMovie = (idItem) => {
+    console.log(idItem);
     history.push(`/movies/${idItem}`);
   };
 
   const handleRightArrow = () => {
     let x = scroll - Math.round(window.innerWidth / 2);
     let listWidht = items.results.length * 190;
-    /*pega metade da tela do cara*/
+    /*pega metade da tela*/
     if (window.innerWidth - listWidht > x) {
       x = window.innerWidth - listWidht - 60;
     }
@@ -33,7 +33,12 @@ export default function MoviesCarousel({ title, items }) {
 
   return (
     <div className="movieRow--listarea">
-      <h2 style={{marginTop:"20vh"}}>{title}</h2>
+      <h2
+        style={{ marginTop: "20vh", paddingLeft: "20px" }}
+        className="title-list"
+      >
+        {title}
+      </h2>
       <div className="movieRow--left" onClick={handleLeftArrow}>
         <NavigateBeforeIcon style={{ fontSize: 50 }} />
       </div>
@@ -51,7 +56,7 @@ export default function MoviesCarousel({ title, items }) {
               <CardMovie
                 key={movie.id}
                 item={movie}
-                navigate={irParaDetalharFilme}
+                navigate={goToDetailMovie}
               />
             </div>
           ))}

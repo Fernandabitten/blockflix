@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
 export const LoginStayled = styled.div`
-    display: flex;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-    background-size: cover;
-    text-alin: center;
+  display: flex;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  background-size: cover;
+  text-alin: center;
 `;
 
 export const Body = styled(LoginStayled)`
-    marginTop: "4%", 
-    margin-left: "10%"; 
-    align-items: "center"; 
-    text-align: "center";
+  marginTop: "4%", 
+  margin-left: "10%"; 
+  align-items: "center"; 
+  text-align: "center";
 `;
 
 export const VerticalColumn = styled(LoginStayled)`

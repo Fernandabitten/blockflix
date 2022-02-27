@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 export default function CardMovieDetails({ item, itemDetails }) {
   const { addItemToCart } = useContext(MyContext);
 
-  const onClickAdicionarAoCarrinho = () => {
+  const onClickAddToCart = () => {
      addItemToCart(item); 
   };
 
@@ -50,7 +50,7 @@ export default function CardMovieDetails({ item, itemDetails }) {
           </div>
 
           <Button
-            onClick={onClickAdicionarAoCarrinho}
+            onClick={onClickAddToCart}
             style={{
               color: "#fff",
               backgroundColor: "#D3840B",

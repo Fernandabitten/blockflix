@@ -25,7 +25,7 @@ export default function DetalharFilme() {
 
   useEffect(() => {
     const details = async () => {
-      setItem(await Tmdb.getMovie(params.id)); 
+      setItem(await Tmdb.getMovie(params.id));
     };
 
     const detailsElenc = async () => {
@@ -43,8 +43,14 @@ export default function DetalharFilme() {
 
   if (item === null || itemDetails === null) {
     return (
-      <div style={{ backgroundColor: "#151f28", width: "100%", height: "600px" }}>
-        <img src={loading} alt="" style={{ width: "25%", marginLeft: "40%" }} />
+      <div
+        style={{ backgroundColor: "#151f28", width: "100%", height: "600px" }}
+      >
+        <img
+          src={loading}
+          alt="gif loading"
+          style={{ width: "25%", marginLeft: "40%" }}
+        />
       </div>
     );
   }
@@ -59,7 +65,6 @@ export default function DetalharFilme() {
         />
 
         <BoxActorCarouselStyled>
-          <h2>Elenco</h2>
           <ActorCarousel item={item} itemDetails={itemDetails} />
         </BoxActorCarouselStyled>
 

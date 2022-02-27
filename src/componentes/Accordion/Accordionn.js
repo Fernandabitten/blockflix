@@ -28,7 +28,7 @@ function Accordion({ purchase }) {
     }
   };
 
-  const onClickAdicionarAoCarrinho = () => {
+  const onClickAddToCart = () => {
     addItemToCart(purchase.items);
   };
 
@@ -59,7 +59,7 @@ function Accordion({ purchase }) {
                   <>
                     <img
                       src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                      alt={""}                  
+                      alt={""}
                     />
                   </>
                 </ImgStyled>
@@ -77,7 +77,7 @@ function Accordion({ purchase }) {
         <Button
           size="small"
           color="secondary"
-          onClick={onClickAdicionarAoCarrinho}
+          onClick={onClickAddToCart}
           style={{
             color: "#fff",
             textAlign: "center",

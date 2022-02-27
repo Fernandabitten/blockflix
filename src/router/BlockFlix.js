@@ -54,7 +54,6 @@ function PrivateRoute({ children, ...rest }) {
         )
       }
     />
-
   );
 }
 export default BlockFlix;

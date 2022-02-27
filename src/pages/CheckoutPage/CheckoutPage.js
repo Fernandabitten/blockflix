@@ -4,13 +4,12 @@ import Product from "../../componentes/Product/Product";
 import Layout from "../../componentes/Layoute/Layout";
 import Button from "../../componentes/UI/Button/Button";
 import {
-  ContainerCheckout,
+  ContainerCheckoutStyled,
   CheckoutStyled,
   CardStyled,
-  Count,
-  CartItems,
+  CountStyled,
+  CartItemsStyled,
 } from "./CheckoutPaje.styled";
-import "./checkout.css";
 
 /**
  *5.1.[ok] remover itens de um pedido;
@@ -46,12 +45,12 @@ export default function Checkout({ item }) {
 
   return (
     <Layout>
-      <ContainerCheckout>
+      <ContainerCheckoutStyled>
         <CheckoutStyled>
           <h1>CHECKOUT</h1>
-          <Count>
+          <CountStyled>
             {cartItems.length} {itemOrItens} no carrinho
-          </Count>
+          </CountStyled>
           <ul className="products">
             {cartItems.map((item, key) => (
               <li key={key} className="row">
@@ -72,26 +71,34 @@ export default function Checkout({ item }) {
             <ul className="product">
               {cartItems.map((item, index) => (
                 <li key={index} className="row">
-                  <CartItems>
-                    <div>{item.title}</div>{" "}
-                    <div>R$ {(item.vote_average * 10).toFixed(2)}</div>
-                  </CartItems>
+                  <CartItemsStyled>
+                    <div className="productTitle">{item.title}</div>{" "}
+                    <div className="average">
+                      R$ {(item.vote_average * 10).toFixed(2)}
+                    </div>
+                  </CartItemsStyled>
                 </li>
               ))}
             </ul>
             <br />
-            <h2> R$ {sum} </h2>
-
-            <Button
-              component="button"
-              onClick={doCheckout}
-              theme="contained-checkout"
-            >
-              Confirmar pedido
-            </Button>
+            <h2 className="totalSum"> R$ {sum} </h2>
+            <div>
+              <Button
+                component="button"
+                onClick={doCheckout}
+                theme="contained-checkout"
+                className="buttonCheckout"
+                style={{
+                  maxWidth: "90%",
+                  marginLeft: "5%",
+                }}
+              >
+                Confirmar pedido
+              </Button>
+            </div>
           </div>
         </CardStyled>
-      </ContainerCheckout>
+      </ContainerCheckoutStyled>
     </Layout>
   );
 }

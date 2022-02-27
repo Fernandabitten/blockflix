@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const ContainerCheckout = styled.div`
+  max-width: 100%;
+  margin: 0 auto;
   margin-top: 10%;
   display: flex;
-  margin-left: 10%;
-    h1 {
-        text-align: center;
-    }
+  h1 {
+    text-align: center;
+  }
 `;
 export const CheckoutStyled = styled(ContainerCheckout)`
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   overflow: auto;
   width: 75%;

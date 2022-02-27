@@ -15,7 +15,7 @@ export default function UltimosPedidos() {
   return (
     <Layout>
       <ContainerCheckout>
-        <div>
+        <div className="lastOrder">
           <h1>Últimas Compras</h1>
           <br />
           {purchaseHistory.map((purchase, key) => (

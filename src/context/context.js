@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-// criando o contexto
 export const MyContext = React.createContext({
   cartItems: [],
   user: null,
 });
 
-//providenciando o contexto
 export function MyProvider({ children }) {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartList") || "[]")
@@ -18,7 +16,7 @@ export function MyProvider({ children }) {
     localStorage.setItem("cartList", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const loginUser = (loginValues) => {   
+  const loginUser = (loginValues) => {
     setIsLogged(true);
   };
 
